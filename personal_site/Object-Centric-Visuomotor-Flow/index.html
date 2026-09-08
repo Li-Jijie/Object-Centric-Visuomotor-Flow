@@ -57,11 +57,19 @@
       <div class="content has-text-centered">
         <img class="teaser-image" src="assets/teaser.png" alt="SlotFlow overview">
       </div>
-      <h2 class="title is-3 section-title">Pipeline</h2>
+      <h2 class="title is-3 section-title">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>History-conditioned visuomotor policies can become brittle when historical motion is stale or global visual representations are entangled with background distractors. We present <strong>SlotFlow</strong>, an object-centric flow-matching policy that decouples observations into semantic object features and lightweight image-plane spatial cues. These complementary signals improve current-state grounding under visual distractors and object-position shifts while preserving the low-step inference efficiency of Action-to-Action flow matching. Simulation and real-world experiments, together with controlled initialization and perception studies, show that object-centric grounding complements useful historical motion priors.</p>
+      </div>
+
+      <h2 class="title is-3 section-title">Method</h2>
+      <div class="content has-text-justified">
+        <p>SlotFlow uses a Cascaded Foveated Module (CFM) to first localize the task-relevant object from the full scene and then refine its representation with a localized high-resolution crop. The resulting semantic slot features and image-plane spatial anchor are fused with visual, proprioceptive, and historical-action features in a six-step flow-matching policy.</p>
+      </div>
       <div class="content has-text-centered">
         <img class="pipeline-image" src="assets/pipeline.png" alt="SlotFlow pipeline">
       </div>
-      <p class="has-text-centered">SlotFlow combines object-centric semantic conditioning and image-plane spatial cues with history-conditioned flow matching for robust visuomotor manipulation.</p>
+      <p class="has-text-centered">Overview of the SlotFlow architecture.</p>
 
       <h2 class="title is-3 section-title mt-6">Results</h2>
       <div class="placeholder">TODO: Add a compact quantitative-results figure.</div>

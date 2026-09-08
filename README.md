@@ -27,26 +27,13 @@ SlotFlow combines object-centric conditioning with history-conditioned flow matc
   <img src="assets/pipeline.png" width="90%" alt="SlotFlow pipeline">
 </p>
 
-## Results
+## Environment
 
-SlotFlow is evaluated on Roboverse manipulation tasks under visual distractors, kinematic perturbations, and object-position shifts.
+SlotFlow is built on the Action-to-Action (A2A) flow-matching framework and uses the same RoboVerse-based environment. For environment installation, simulator setup, Docker configuration, and baseline usage, please follow the official A2A repository:
 
-<p align="center">
-  <img src="assets/results.png" width="90%" alt="Quantitative results">
-</p>
+[A2A Flow Matching](https://github.com/JIAjindou/A2A_Flow_Matching)
 
-Additional results, controlled ablations, and real-world demonstrations are included in the supplementary material.
-
-## Installation
-
-> **TODO:** Add the tested operating system, CUDA, PyTorch, and Python versions.
-
-```bash
-git clone https://github.com/Li-Jijie/Object-Centric-Visuomotor-Flow.git
-cd Object-Centric-Visuomotor-Flow
-
-# TODO: add environment creation and dependency installation commands
-```
+After the A2A environment is configured, the SlotFlow-specific code and commands will be provided in this repository.
 
 ## Data and Checkpoints
 

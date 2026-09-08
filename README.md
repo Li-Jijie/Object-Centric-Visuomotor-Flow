@@ -6,7 +6,7 @@
 
 Official repository for the paper **Object-Centric Conditioning for Visuomotor Flow Matching**.
 
-**Jijie Li**<sup>1,2</sup>, **Xu Yang**<sup>1,2</sup>, **Junhong Zou**<sup>1,2</sup>, **Chunhai Zhao**<sup>3</sup>, **Chaoyang Zhao**<sup>1,3,*</sup>, **Zhen Lei**<sup>1,2,4,5</sup>, and **Xiangyu Zhu**<sup>1,2,*</sup>
+[**Jijie Li**](https://li-jijie.github.io)<sup>1,2</sup>, **Xu Yang**<sup>1,2</sup>, **Junhong Zou**<sup>1,2</sup>, **Chunhai Zhao**<sup>3</sup>, **Chaoyang Zhao**<sup>1,3,*</sup>, [**Zhen Lei**](https://www.cbsr.ia.ac.cn/users/zlei/)<sup>1,2,4,5</sup>, and [**Xiangyu Zhu**](https://xiangyuzhu-open.github.io/homepage/)<sup>1,2,*</sup>
 
 <sup>1</sup>School of Artificial Intelligence, University of Chinese Academy of Sciences<br>
 <sup>2</sup>State Key Laboratory of Multimodal Artificial Intelligence Systems, Institute of Automation, Chinese Academy of Sciences<br>

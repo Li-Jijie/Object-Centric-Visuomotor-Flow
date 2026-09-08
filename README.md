@@ -15,7 +15,7 @@ Official repository for the paper **Object-Centric Conditioning for Visuomotor F
 <sup>5</sup>School of Computer Science and Engineering, Faculty of Innovation Engineering, Macau University of Science and Technology<br>
 <sup>*</sup>Corresponding authors
 
-**[Paper](PAPER_LINK)** · **[Project Page](PROJECT_PAGE_LINK)** · **[Video](VIDEO_LINK)** · **[Model Zoo](MODEL_ZOO_LINK)**
+**[Paper](PAPER_LINK)** · **[Project Page](PROJECT_PAGE_LINK)**
 
 > **Release status:** The repository is being prepared for public release. Code, checkpoints, and reproduction instructions will be added progressively.
 
@@ -71,16 +71,6 @@ python scripts/visualize.py --config configs/eval_close_box.yaml \
 
 The release will include configuration files and scripts for Close Box, Pick Cube, and Push Cube evaluation; visual, kinematic, and spatial perturbation protocols; core component ablations; reviewer-motivated controls; mid-rollout object displacement experiments; and real-world UR3 evaluation, subject to hardware and dataset availability.
 
-## Visualization and Demo
-
-<p align="center">
-  <img src="assets/ood_visualization.png" width="85%" alt="OOD visualization placeholder">
-</p>
-
-**Demo video:** [VIDEO_LINK]
-
-**Project website:** [PROJECT_PAGE_LINK]
-
 ## Citation
 
 If you find this work useful, please cite:
@@ -93,10 +83,6 @@ If you find this work useful, please cite:
   year      = {2026}
 }
 ```
-
-## Acknowledgements
-
-This work was supported by the Strategic Priority Research Program of Chinese Academy of Sciences under Grant XDA0480103, Chinese National Natural Science Foundation Projects 92570119, the Science and Technology Development Fund of Macau Project 0140/2024/AGJ, and InnoHK program.
 
 ## License
 

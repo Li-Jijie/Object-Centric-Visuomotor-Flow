@@ -6,14 +6,14 @@
 
 Official repository for the paper **Object-Centric Conditioning for Visuomotor Flow Matching**.
 
-**Jijie Li**$^{1,2}$, **Xu Yang**$^{1,2}$, **Junhong Zou**$^{1,2}$, **Chunhai Zhao**$^{3}$, **Chaoyang Zhao**$^{1,3,*}$, **Zhen Lei**$^{1,2,4,5}$, and **Xiangyu Zhu**$^{1,2,*}$
+**Jijie Li**<sup>1,2</sup>, **Xu Yang**<sup>1,2</sup>, **Junhong Zou**<sup>1,2</sup>, **Chunhai Zhao**<sup>3</sup>, **Chaoyang Zhao**<sup>1,3,*</sup>, **Zhen Lei**<sup>1,2,4,5</sup>, and **Xiangyu Zhu**<sup>1,2,*</sup>
 
-$^{1}$School of Artificial Intelligence, University of Chinese Academy of Sciences  
-$^{2}$State Key Laboratory of Multimodal Artificial Intelligence Systems, Institute of Automation, Chinese Academy of Sciences  
-$^{3}$Foundation Model Research Center, Institute of Automation, Chinese Academy of Sciences  
-$^{4}$Centre for Artificial Intelligence and Robotics, Hong Kong Institute of Science & Innovation, Chinese Academy of Sciences  
-$^{5}$School of Computer Science and Engineering, Faculty of Innovation Engineering, Macau University of Science and Technology  
-$^{*}$Corresponding authors
+<sup>1</sup>School of Artificial Intelligence, University of Chinese Academy of Sciences<br>
+<sup>2</sup>State Key Laboratory of Multimodal Artificial Intelligence Systems, Institute of Automation, Chinese Academy of Sciences<br>
+<sup>3</sup>Foundation Model Research Center, Institute of Automation, Chinese Academy of Sciences<br>
+<sup>4</sup>Centre for Artificial Intelligence and Robotics, Hong Kong Institute of Science & Innovation, Chinese Academy of Sciences<br>
+<sup>5</sup>School of Computer Science and Engineering, Faculty of Innovation Engineering, Macau University of Science and Technology<br>
+<sup>*</sup>Corresponding authors
 
 **[Paper](PAPER_LINK)** · **[Project Page](PROJECT_PAGE_LINK)** · **[Video](VIDEO_LINK)** · **[Model Zoo](MODEL_ZOO_LINK)**
 

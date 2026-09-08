@@ -1,82 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Object-Centric Conditioning for Visuomotor Flow Matching">
   <title>[CoRL 2026] Object-Centric Conditioning for Visuomotor Flow Matching</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <style>
-    :root { --ink: #222; --muted: #666; --line: #e5e5e5; --link: #1769aa; }
-    * { box-sizing: border-box; }
-    body { margin: 0; color: var(--ink); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    .container { max-width: 980px; margin: 0 auto; padding: 44px 24px 72px; }
-    h1 { margin: 0 auto 14px; max-width: 900px; text-align: center; font-size: clamp(28px, 4vw, 42px); line-height: 1.2; }
-    .authors, .links { text-align: center; }
-    .authors { margin: 14px auto 4px; font-size: 18px; }
-    .affiliations { color: var(--muted); text-align: center; font-size: 14px; }
-    .links { margin: 22px 0 32px; }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .links a { display: inline-block; margin: 4px 6px; padding: 7px 14px; border: 1px solid #cfd8e3; border-radius: 6px; }
-    .hero { width: 100%; margin: 18px 0 30px; border: 1px solid var(--line); }
-    section { margin: 34px 0; }
-    h2 { padding-bottom: 7px; border-bottom: 1px solid var(--line); font-size: 24px; }
-    .placeholder { padding: 30px; border: 1px dashed #b9c2cc; color: var(--muted); text-align: center; }
-    pre { overflow-x: auto; padding: 16px; background: #f6f8fa; border-radius: 6px; }
-    footer { margin-top: 52px; color: var(--muted); text-align: center; font-size: 13px; }
+    body { font-family: 'Noto Sans', sans-serif; color: #333; }
+    .publication-title { font-family: 'Google Sans', sans-serif; line-height: 1.18; }
+    .publication-authors { line-height: 1.8; }
+    .author-block { white-space: nowrap; }
+    .publication-links { margin-top: 1.25rem; }
+    .section-title { font-family: 'Google Sans', sans-serif; }
+    .teaser-image, .pipeline-image { width: 100%; height: auto; }
+    .placeholder { padding: 2.5rem; border: 1px dashed #b8c2cc; color: #777; text-align: center; }
   </style>
 </head>
 <body>
-  <main class="container">
-    <h1>[CoRL 2026] Object-Centric Conditioning for Visuomotor Flow Matching</h1>
-    <div class="authors">
-      <strong>Jijie Li</strong><sup>1,2</sup>, <strong>Xu Yang</strong><sup>1,2</sup>,
-      <strong>Junhong Zou</strong><sup>1,2</sup>, <strong>Chunhai Zhao</strong><sup>3</sup>,
-      <strong>Chaoyang Zhao</strong><sup>1,3,*</sup>, <strong>Zhen Lei</strong><sup>1,2,4,5</sup>,
-      and <strong>Xiangyu Zhu</strong><sup>1,2,*</sup>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">[CoRL 2026] Object-Centric Conditioning for Visuomotor Flow Matching</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://li-jijie.github.io">Jijie Li</a><sup>1,2</sup>,</span>
+              <span class="author-block">Xu Yang<sup>1,2</sup>,</span>
+              <span class="author-block">Junhong Zou<sup>1,2</sup>,</span>
+              <span class="author-block">Chunhai Zhao<sup>3</sup>,</span>
+              <span class="author-block">Chaoyang Zhao<sup>1,3,*</sup>,</span>
+              <span class="author-block"><a href="https://www.cbsr.ia.ac.cn/users/zlei/">Zhen Lei</a><sup>1,2,4,5</sup>,</span>
+              <span class="author-block">and <a href="https://xiangyuzhu-open.github.io/homepage/">Xiangyu Zhu</a><sup>1,2,*</sup></span>
+            </div>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>1</sup>School of Artificial Intelligence, University of Chinese Academy of Sciences</span><br>
+              <span class="author-block"><sup>2</sup>State Key Laboratory of Multimodal Artificial Intelligence Systems, Institute of Automation, Chinese Academy of Sciences</span><br>
+              <span class="author-block"><sup>3</sup>Foundation Model Research Center, Institute of Automation, Chinese Academy of Sciences</span><br>
+              <span class="author-block"><sup>4</sup>Centre for Artificial Intelligence and Robotics, Hong Kong Institute of Science &amp; Innovation, Chinese Academy of Sciences</span><br>
+              <span class="author-block"><sup>5</sup>School of Computer Science and Engineering, Faculty of Innovation Engineering, Macau University of Science and Technology</span>
+            </div>
+            <div class="publication-links">
+              <a href="PAPER_LINK" class="button is-dark is-rounded">Paper</a>
+              <a href="https://github.com/Li-Jijie/Object-Centric-Visuomotor-Flow" class="button is-dark is-rounded">Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="affiliations">
-      <sup>1</sup> UCAS &nbsp; <sup>2</sup> Institute of Automation, CAS &nbsp;
-      <sup>3</sup> Foundation Model Research Center, CAS &nbsp; <sup>4</sup> CAIR, HKISI, CAS &nbsp; <sup>5</sup> MUST
+  </section>
+
+  <section class="section pt-4">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <img class="teaser-image" src="assets/teaser.png" alt="SlotFlow overview">
+      </div>
+      <h2 class="title is-3 section-title">Pipeline</h2>
+      <div class="content has-text-centered">
+        <img class="pipeline-image" src="assets/pipeline.png" alt="SlotFlow pipeline">
+      </div>
+      <p class="has-text-centered">SlotFlow combines object-centric semantic conditioning and image-plane spatial cues with history-conditioned flow matching for robust visuomotor manipulation.</p>
+
+      <h2 class="title is-3 section-title mt-6">Results</h2>
+      <div class="placeholder">TODO: Add a compact quantitative-results figure.</div>
+
+      <h2 class="title is-3 section-title mt-6">Video</h2>
+      <div class="placeholder">TODO: Add a project video when available.</div>
     </div>
-    <div class="links">
-      <a href="PAPER_LINK">Paper</a>
-      <a href="https://github.com/Li-Jijie/Object-Centric-Visuomotor-Flow">Code</a>
-      <a href="https://li-jijie.github.io/Object-Centric-Visuomotor-Flow/">Project Page</a>
-    </div>
+  </section>
 
-    <img class="hero" src="assets/teaser.png" alt="SlotFlow overview">
-
-    <section>
-      <h2>Overview</h2>
-      <p>SlotFlow is an object-centric flow-matching policy for robust and efficient visuomotor manipulation. It combines semantic object slots, image-plane spatial cues, and cascaded foveated perception with history-conditioned flow generation.</p>
-    </section>
-
-    <section>
-      <h2>Pipeline</h2>
-      <img class="hero" src="assets/pipeline.png" alt="SlotFlow pipeline">
-    </section>
-
-    <section>
-      <h2>Results</h2>
-      <div class="placeholder">TODO: Add a compact quantitative-results figure or table.</div>
-    </section>
-
-    <section>
-      <h2>Video</h2>
-      <div class="placeholder">TODO: Add an embedded project video if desired.</div>
-    </section>
-
-    <section>
-      <h2>BibTeX</h2>
-      <pre>@inproceedings{li2026objectcentric,
-  title     = {Object-Centric Conditioning for Visuomotor Flow Matching},
-  author    = {Li, Jijie and Yang, Xu and Zou, Junhong and Zhao, Chunhai and Zhao, Chaoyang and Lei, Zhen and Zhu, Xiangyu},
-  booktitle = {Proceedings of the Conference on Robot Learning},
-  year      = {2026}
-}</pre>
-    </section>
-
-    <footer>Project page template — replace placeholder links and sections before publication.</footer>
-  </main>
+  <footer class="footer">
+    <div class="content has-text-centered"><p>Project page under construction.</p></div>
+  </footer>
 </body>
 </html>

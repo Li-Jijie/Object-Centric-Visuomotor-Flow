@@ -1,4 +1,4 @@
-# Object-Centric Conditioning for Visuomotor Flow Matching
+# [CoRL 2026] Object-Centric Conditioning for Visuomotor Flow Matching
 
 <p align="center">
   <img src="assets/teaser.png" width="95%" alt="SlotFlow overview">

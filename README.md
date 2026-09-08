@@ -19,23 +19,13 @@ Official repository for the paper **Object-Centric Conditioning for Visuomotor F
 
 > **Release status:** The repository is being prepared for public release. Code, checkpoints, and reproduction instructions will be added progressively.
 
-## Abstract
+## Pipeline
 
-History-conditioned visuomotor policies can struggle when the current scene differs from the historical context used to initialize action generation. We present **SlotFlow**, an object-centric flow-matching policy that improves current-state grounding while preserving the efficiency of history-conditioned inference. SlotFlow introduces a Cascaded Foveated Module (CFM) that extracts object-centric semantic features and lightweight image-plane spatial cues through coarse-to-fine perception. These complementary signals are injected into the flow-generation pathway to improve robustness under visual distractors, kinematic perturbations, and object-position shifts.
+SlotFlow combines object-centric conditioning with history-conditioned flow matching for robust and efficient visuomotor manipulation.
 
 <p align="center">
   <img src="assets/pipeline.png" width="90%" alt="SlotFlow pipeline">
 </p>
-
-## Method
-
-SlotFlow consists of three main components:
-
-1. **Object-centric semantic conditioning:** foreground slots provide task-relevant object identity and appearance information while suppressing irrelevant scene context.
-2. **Image-plane spatial conditioning:** a normalized object centroid is encoded as a lightweight spatial cue for current-location grounding.
-3. **Cascaded foveated perception:** a coarse global stage proposes an object region, and a fine high-resolution stage refines the local representation and spatial anchor.
-
-The resulting semantic and spatial representations are fused with visual, proprioceptive, and historical-action features in a low-step flow-matching policy.
 
 ## Results
 

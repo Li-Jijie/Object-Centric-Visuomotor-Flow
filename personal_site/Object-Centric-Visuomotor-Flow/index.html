@@ -4,18 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Object-Centric Conditioning for Visuomotor Flow Matching">
+  <meta property="og:title" content="Object-Centric Conditioning for Visuomotor Flow Matching">
+  <meta property="og:description" content="An object-centric flow matching policy for robust visuomotor manipulation.">
+  <meta property="og:image" content="assets/teaser.png">
   <title>Object-Centric Conditioning for Visuomotor Flow Matching</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <style>
-    body { font-family: 'Noto Sans', sans-serif; color: #333; }
-    .publication-title { font-family: 'Google Sans', sans-serif; line-height: 1.18; }
+    body { color: #303030; font-family: 'Noto Sans', sans-serif; }
+    .publication-title, .section-title { font-family: 'Google Sans', sans-serif; }
+    .publication-title { line-height: 1.16; }
     .publication-authors { line-height: 1.8; }
     .author-block { white-space: nowrap; }
-    .publication-links { margin-top: 1.25rem; }
-    .section-title { font-family: 'Google Sans', sans-serif; }
-    .teaser-image, .pipeline-image { width: 100%; height: auto; }
-    .placeholder { padding: 2.5rem; border: 1px dashed #b8c2cc; color: #777; text-align: center; }
+    .publication-links { margin-top: 1.2rem; }
+    .publication-links .button { margin: .25rem; }
+    .teaser-image, .pipeline-image, .qualitative-image { width: 100%; height: auto; }
+    .section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    .result-table th, .result-table td { text-align: center !important; vertical-align: middle; }
+    .result-table th:first-child, .result-table td:first-child { text-align: left !important; }
+    .ours td { background: #fff0d9; font-weight: 700; }
+    .caption { color: #666; font-size: .93rem; margin-top: .5rem; }
+    .bibtex { background: #f5f5f5; border-radius: 6px; font-size: .9rem; padding: 1rem; white-space: pre-wrap; }
+    .footer { padding: 2rem 1.5rem; }
   </style>
 </head>
 <body>
@@ -35,15 +45,16 @@
               <span class="author-block">and <a href="https://xiangyuzhu-open.github.io/homepage/">Xiangyu Zhu</a><sup>1,2,*</sup></span>
             </div>
             <div class="is-size-6 publication-authors">
-              <span class="author-block"><sup>1</sup>School of Artificial Intelligence, University of Chinese Academy of Sciences</span><br>
-              <span class="author-block"><sup>2</sup>State Key Laboratory of Multimodal Artificial Intelligence Systems, Institute of Automation, Chinese Academy of Sciences</span><br>
-              <span class="author-block"><sup>3</sup>Foundation Model Research Center, Institute of Automation, Chinese Academy of Sciences</span><br>
-              <span class="author-block"><sup>4</sup>Centre for Artificial Intelligence and Robotics, Hong Kong Institute of Science &amp; Innovation, Chinese Academy of Sciences</span><br>
-              <span class="author-block"><sup>5</sup>School of Computer Science and Engineering, Faculty of Innovation Engineering, Macau University of Science and Technology</span>
+              <span><sup>1</sup>School of Artificial Intelligence, University of Chinese Academy of Sciences</span><br>
+              <span><sup>2</sup>State Key Laboratory of Multimodal Artificial Intelligence Systems, Institute of Automation, Chinese Academy of Sciences</span><br>
+              <span><sup>3</sup>Foundation Model Research Center, Institute of Automation, Chinese Academy of Sciences</span><br>
+              <span><sup>4</sup>Centre for Artificial Intelligence and Robotics, Hong Kong Institute of Science &amp; Innovation, Chinese Academy of Sciences</span><br>
+              <span><sup>5</sup>School of Computer Science and Engineering, Faculty of Innovation Engineering, Macau University of Science and Technology</span><br>
+              <span><sup>*</sup>Corresponding authors</span>
             </div>
             <div class="mt-3"><span class="tag is-info is-light is-medium">CoRL 2026</span></div>
             <div class="publication-links">
-              <a href="PAPER_LINK" class="button is-dark is-rounded">Paper</a>
+              <a href="assets/paper.pdf" class="button is-dark is-rounded">Paper</a>
               <a href="https://github.com/Li-Jijie/Object-Centric-Visuomotor-Flow" class="button is-dark is-rounded">Code</a>
             </div>
           </div>
@@ -52,35 +63,83 @@
     </div>
   </section>
 
-  <section class="section pt-4">
+  <section class="section pt-2">
     <div class="container is-max-desktop">
-      <div class="content has-text-centered">
-        <img class="teaser-image" src="assets/teaser.png" alt="SlotFlow overview">
-      </div>
-      <h2 class="title is-3 section-title">Abstract</h2>
-      <div class="content has-text-justified">
-        <p>History-conditioned visuomotor policies can become brittle when historical motion is stale or global visual representations are entangled with background distractors. We present <strong>SlotFlow</strong>, an object-centric flow-matching policy that decouples observations into semantic object features and lightweight image-plane spatial cues. These complementary signals improve current-state grounding under visual distractors and object-position shifts while preserving the low-step inference efficiency of Action-to-Action flow matching. Simulation and real-world experiments, together with controlled initialization and perception studies, show that object-centric grounding complements useful historical motion priors.</p>
-      </div>
-
-      <h2 class="title is-3 section-title">Method</h2>
-      <div class="content has-text-justified">
-        <p>SlotFlow uses a Cascaded Foveated Module (CFM) to first localize the task-relevant object from the full scene and then refine its representation with a localized high-resolution crop. The resulting semantic slot features and image-plane spatial anchor are fused with visual, proprioceptive, and historical-action features in a six-step flow-matching policy.</p>
-      </div>
-      <div class="content has-text-centered">
-        <img class="pipeline-image" src="assets/pipeline.png" alt="SlotFlow pipeline">
-      </div>
-      <p class="has-text-centered">Overview of the SlotFlow architecture.</p>
-
-      <h2 class="title is-3 section-title mt-6">Results</h2>
-      <div class="placeholder">TODO: Add a compact quantitative-results figure.</div>
-
-      <h2 class="title is-3 section-title mt-6">Video</h2>
-      <div class="placeholder">TODO: Add a project video when available.</div>
+      <img class="teaser-image" src="assets/teaser.png" alt="Viewer-centered versus object-centric representations">
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="content has-text-centered"><p>Project page under construction.</p></div>
-  </footer>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>Robot visuomotor policies are commonly formulated as autoregressive, diffusion-based, or flow matching models. Action-to-Action (A2A) flow matching improves inference efficiency by initializing generation from historical action priors rather than stochastic noise. However, stale historical motion patterns and entangled global visual representations can jointly reduce robustness under spatial out-of-distribution shifts and visual distractors. We present <strong>SlotFlow</strong>, an object-centric flow matching policy that decouples scene observations into semantic features and lightweight image-plane spatial cues for current-state grounding. Simulation and real-world experiments demonstrate improved robustness under visual distractors and severe spatial perturbations while preserving A2A's low-step inference efficiency.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Method</h2>
+      <div class="content has-text-justified">
+        <p>SlotFlow uses a Cascaded Foveated Module to extract object-centric semantic features and a lightweight image-plane spatial anchor. A coarse global stage localizes the target object and a fine local stage refines its representation through a high-resolution crop. These complementary cues are fused with visual, proprioceptive, and historical-action features to condition six-step flow matching.</p>
+      </div>
+      <img class="pipeline-image" src="assets/pipeline.png" alt="SlotFlow architecture">
+      <p class="caption has-text-centered">Overview of SlotFlow. The Cascaded Foveated Module supplies semantic and image-plane spatial conditioning to history-conditioned flow generation.</p>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Results</h2>
+      <div class="content has-text-justified">
+        <p>On Close Box, SlotFlow improves robustness under visual, kinematic, and object-position perturbations while retaining the six-step inference budget of A2A.</p>
+      </div>
+      <div class="table-container">
+        <table class="table is-fullwidth is-hoverable result-table">
+          <thead><tr><th>Method</th><th>Steps</th><th>Level 0</th><th>Level 1</th><th>Level 2</th><th>Level 3</th><th>Pos. Pert.</th></tr></thead>
+          <tbody>
+            <tr><td>DDPM-DiT</td><td>100</td><td>86%</td><td>0%</td><td>0%</td><td>0%</td><td>56%</td></tr>
+            <tr><td>FM-DiT</td><td>10</td><td>98%</td><td>2%</td><td>2%</td><td>2%</td><td>60%</td></tr>
+            <tr><td>Score-U-Net</td><td>100</td><td>84%</td><td>2%</td><td>0%</td><td>0%</td><td>58%</td></tr>
+            <tr><td>VITA</td><td>6</td><td>100%</td><td>4%</td><td>2%</td><td>4%</td><td>74%</td></tr>
+            <tr><td>A2A</td><td>6</td><td>100%</td><td>12%</td><td>18%</td><td>10%</td><td>70%</td></tr>
+            <tr class="ours"><td>SlotFlow (Ours)</td><td>6</td><td>100%</td><td>50%</td><td>52%</td><td>52%</td><td>80%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caption has-text-centered">Close Box success rates under visual, kinematic, and spatial perturbations.</p>
+
+      <div class="columns is-variable is-4 mt-5">
+        <div class="column"><img class="qualitative-image" src="assets/qualitative_sim.png" alt="Simulation qualitative results"><p class="caption has-text-centered">Simulation trajectories under Level 3 perturbations and spatial displacements.</p></div>
+        <div class="column"><img class="qualitative-image" src="assets/qualitative_real.png" alt="Real-world qualitative results"><p class="caption has-text-centered">Real-world UR3 deployment under tablecloth replacement and object-position perturbations.</p></div>
+      </div>
+
+      <h3 class="title is-4 section-title mt-6">Real-World Close Drawer</h3>
+      <div class="table-container is-flex is-justify-content-center">
+        <table class="table result-table" style="min-width: 520px;">
+          <thead><tr><th>Method</th><th>ID</th><th>Tablecloth Shift</th><th>Pos. Shift</th></tr></thead>
+          <tbody>
+            <tr><td>A2A</td><td>100%</td><td>55%</td><td>40%</td></tr>
+            <tr class="ours"><td>SlotFlow (Ours)</td><td>100%</td><td>85%</td><td>75%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Citation</h2>
+      <pre class="bibtex">@inproceedings{li2026objectcentric,
+  title     = {Object-Centric Conditioning for Visuomotor Flow Matching},
+  author    = {Li, Jijie and Yang, Xu and Zou, Junhong and Zhao, Chunhai and Zhao, Chaoyang and Lei, Zhen and Zhu, Xiangyu},
+  booktitle = {Proceedings of the 10th Conference on Robot Learning},
+  year      = {2026}
+}</pre>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="content has-text-centered"><p>© 2026 SlotFlow authors.</p></div></footer>
 </body>
 </html>

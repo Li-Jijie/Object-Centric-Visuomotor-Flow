@@ -1,0 +1,59 @@
+eval_args:
+  _target_: roboverse_learn.il.utils.eval_args.Args
+  level: 0
+  task: ""
+  max_step: 200
+  num_envs: 1
+  sim: "isaacsim"
+  render_mode: "raytracing"
+  gpu_id: 0
+  probe_enable: False
+  probe_sigma: 0.0
+  probe_transform: "noise"
+  probe_mode: "continuous"
+  probe_step: 30
+  probe_seed: null
+  action_shock_enable: False
+  action_shock_sigma: 0.0
+  action_shock_mode: "one_shot"
+  action_shock_step: 30
+  action_shock_seed: null
+  action_shock_clip: True
+  # Position generalization eval (object position offset, independent from visual DR)
+  pos_offset_enable: False
+  pos_offset_x_min: -0.05
+  pos_offset_x_max: 0.05
+  pos_offset_y_min: -0.05
+  pos_offset_y_max: 0.05
+  pos_offset_z_min: 0.0
+  pos_offset_z_max: 0.0
+  pos_offset_obj_names: ""
+  pos_offset_per_demo: True
+  pos_offset_seed: 42
+  # Mid-rollout object perturbation (history/current-observation conflict)
+  mid_obj_perturb_enable: False
+  mid_obj_perturb_step: 40
+  mid_obj_perturb_x: 0.10
+  mid_obj_perturb_y: 0.0
+  mid_obj_perturb_z: 0.0
+  mid_obj_perturb_obj_names: ""
+  mid_obj_perturb_zero_vel: True
+  # Robot initial state perturbation (joint noise, independent from visual DR)
+  robot_init_noise_enable: False
+  robot_init_noise_sigma: 0.0
+  robot_init_noise_per_demo: True
+  robot_init_noise_seed: 42
+  robot_init_noise_clip: null
+
+policy_runner:
+  action:
+    action_type: "ee"
+    ee_cfg:
+      rotation_rep: "quaternion"
+      gripper_rep: "q_pos"
+    delta: False
+  obs:
+    obs_type: "ee"
+    ee_cfg:
+      rotation_rep: "quaternion"
+      gripper_rep: "q_pos"

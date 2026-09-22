@@ -1,0 +1,123 @@
+# A2A + DINOv3 slot encoder (add) + ImageNet ResNet
+# Visual conditioning: ResNet features + DINOv3 slot features fused.
+# Condition = fuse([ResNet_vis, proprio_cond, slot_cond])
+#
+# Key changes from the broken version:
+#   1. ResNet loaded with ImageNet pretrained weights (not random init)
+#   2. dino_enable=true → loads frozen DINOv3 + slot from distill ckpt
+#   3. slot_distill_ckpt disabled (DINOv3 handles its own loading)
+#   4. history_noise_std=0.0 (avoid train-inference mismatch)
+
+_target_: roboverse_learn.il.policies.a2a.a2a_slot_policy.A2ASlotImagePolicy
+
+shape_meta: ${shape_meta}
+
+obs_encoder:
+  _target_: roboverse_learn.il.utils.vision.multi_image_obs_encoder.MultiImageObsEncoder
+  shape_meta: ${shape_meta}
+  rgb_model:
+    _target_: roboverse_learn.il.utils.vision.model_getter.get_resnet
+    name: resnet18
+    weights: ${oc.env:TORCHVISION_RESNET18_WEIGHTS,IMAGENET1K_V1}
+  resize_shape: null
+  crop_shape: null
+  random_crop: True
+  use_group_norm: True
+  share_rgb_model: False
+  imagenet_norm: True
+
+horizon: ${horizon}
+n_action_steps: ${eval:'${n_action_steps}+${n_latency_steps}'}
+n_obs_steps: ${n_obs_steps}
+
+decode_flow_latents: true
+consistency_weight: 1
+enc_contrastive_weight: 0.0
+flow_contrastive_weight: 0.0
+latent_dim: 512
+robot_dim: null  # auto-set by UR3 override
+# proprio_dim: 9  # removed — three-branch proprio noise broke condition convergence
+
+# ── DINOv3 slot encoder ──
+dino_enable: true
+dino_model_path: ${oc.env:DINO_MODEL_PATH,}
+dino_slot_ckpt_path: ""   # override via CLI: --dino_slot_ckpt_path
+dino_num_slots: 2
+dino_slot_dim: 256
+dino_slot_heads: 4
+dino_img_size: 448
+dino_freeze: true
+dino_layer: 9                   # matches training preset (auto-detected from ckpt)
+dino_two_scale_enable: true     # two-scale: coarse→crop→fine slot for condition
+
+# ── Slot selection ──
+num_slots: 2
+slot_dim: 256
+slot_num_heads: 4
+slot_dropout: 0.0
+history_noise_std: 0.0
+gate_reg_weight: 1.0e-4
+cond_obj_weight: 1.0
+flow_start_mode: history
+flow_start_noise_std: 1.0
+flow_start_scale: 1.0
+slot_start_enable: false
+slot_cond_enable: true
+slot_cond_mode: add
+slot_semantic_enable: true
+slot_geometry_enable: true
+object_condition_source: slot
+slot_adapter_enable: true
+slot_adapter_hidden_dim: 512
+slot_adapter_dropout: 0.1
+slot_cond_image_dropout: 0.15
+slot_cond_gate_enable: true
+cond_split_ln_enable: true
+cond_fuse_mlp_enable: true
+cond_fuse_mlp_hidden_dim: 512
+cond_fuse_mlp_dropout: 0.1
+slot_selection_mode: fixed_index
+slot_obj_index: 0
+slot_selection_temperature: 1.0
+saliency_reg_enable: false
+saliency_reg_weight: 0.0
+saliency_noise_std: 0.05
+saliency_apply_prob: 1.0
+saliency_num_steps: 1
+slot_mask_supervise_enable: false
+slot_mask_supervise_weight: 0.0
+
+# ── LEGACY slot_distill (not used when dino_enable=true) ──
+slot_distill_ckpt: ""
+slot_distill_load_backbone: false
+slot_distill_load_slot: false
+slot_distill_freeze_backbone: false
+slot_distill_freeze_slot: false
+
+flow_matcher:
+  _target_: roboverse_learn.il.utils.flow.flow_matchers.ConditionalFlowMatcher
+  sigma: 0.0
+  num_sampling_steps: 6
+
+flow_net:
+  hidden_dim: 512
+  num_layers: 4
+  mlp_ratio: 4
+  dropout: 0.0
+
+action_ae:
+  kl_weight: 1e-6
+  enc_recon_weight: 0.5
+  flow_recon_weight: 0.5
+  recon_loss_type: l1
+  use_variational: true
+  freeze_encoder: false
+  freeze_decoder: false
+  net:
+    enc_hidden_dim: 512
+    dec_hidden_dim: 512
+    latent_dim: 512
+    num_heads: 8
+    mlp_ratio: 4
+    dropout: 0.0
+    num_layers: 4

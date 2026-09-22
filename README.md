@@ -15,9 +15,9 @@ Official repository for the paper **Object-Centric Conditioning for Visuomotor F
 <sup>5</sup>School of Computer Science and Engineering, Faculty of Innovation Engineering, Macau University of Science and Technology<br>
 <sup>*</sup>Corresponding authors
 
-**[Paper](PAPER_LINK)** · **[Project Page](PROJECT_PAGE_LINK)**
+**[Paper](http://arxiv.org/abs/2609.24155)** · **[Project Page](https://li-jijie.github.io/Object-Centric-Visuomotor-Flow/)**
 
-> **Release status:** The repository is being prepared for public release. Code, checkpoints, and reproduction instructions will be added progressively.
+> **Release status:** Training code and reproduction instructions are available. Checkpoints and datasets are not included in this release.
 
 ## Pipeline
 

@@ -6,7 +6,7 @@
   <meta name="description" content="Object-Centric Conditioning for Visuomotor Flow Matching">
   <meta property="og:title" content="Object-Centric Conditioning for Visuomotor Flow Matching">
   <meta property="og:description" content="An object-centric flow matching policy for robust visuomotor manipulation.">
-  <meta property="og:image" content="assets/teaser.png">
+  <meta property="og:image" content="https://li-jijie.github.io/Object-Centric-Visuomotor-Flow/assets/teaser.png">
   <title>Object-Centric Conditioning for Visuomotor Flow Matching</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -18,8 +18,15 @@
     .author-block { white-space: nowrap; }
     .publication-links { margin-top: 1.2rem; }
     .publication-links .button { margin: .25rem; }
+    .publication-links .button[aria-disabled="true"] { cursor: default; opacity: .62; pointer-events: none; }
     .teaser-image, .pipeline-image, .qualitative-image { width: 100%; height: auto; }
+    .demo-video { aspect-ratio: 16 / 9; border: 0; width: 100%; }
     .section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    .highlights { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .highlight { border-left: 3px solid #3273dc; padding: .25rem 0 .25rem 1rem; }
+    .highlight h3 { font-family: 'Google Sans', sans-serif; font-size: 1.08rem; margin: 0 0 .2rem; }
+    .highlight p { margin: 0; }
+    @media (min-width: 769px) { .highlights { grid-template-columns: repeat(3, 1fr); } }
     .result-table th, .result-table td { text-align: center !important; vertical-align: middle; }
     .result-table th:first-child, .result-table td:first-child { text-align: left !important; }
     .ours td { background: #fff0d9; font-weight: 700; }
@@ -54,8 +61,9 @@
             </div>
             <div class="mt-3"><span class="tag is-info is-light is-medium">CoRL 2026</span></div>
             <div class="publication-links">
-              <a href="assets/paper.pdf" class="button is-dark is-rounded">Paper</a>
+              <a href="https://arxiv.org/abs/2609.24155" class="button is-dark is-rounded">Paper</a>
               <a href="https://github.com/Li-Jijie/Object-Centric-Visuomotor-Flow" class="button is-dark is-rounded">Code</a>
+              <a href="../publication/2026-object-centric-visuomotor-flow-matching" class="button is-dark is-rounded">Publication</a>
             </div>
           </div>
         </div>
@@ -74,6 +82,21 @@
       <h2 class="title is-3 section-title">Abstract</h2>
       <div class="content has-text-justified">
         <p>Robot visuomotor policies are commonly formulated as autoregressive, diffusion-based, or more recently, flow matching models. Among them, Action-to-Action (A2A) flow matching improves inference efficiency by initializing generation from historical action priors rather than stochastic noise. However, stale historical motion patterns and entangled global visual representations can jointly reduce robustness under spatial out-of-distribution (OOD) shifts and visual distractors. In this work, we propose <strong>SlotFlow</strong>, an object-centric flow matching policy for robust visuomotor manipulation. SlotFlow decouples scene observations into semantic (&ldquo;what&rdquo;) features and lightweight image-plane spatial (&ldquo;where&rdquo;) cues to provide object-aware policy conditioning and current-state grounding. The semantic representation suppresses irrelevant background correlations, while the spatial cue improves adaptation to shifted object configurations. Extensive simulation and real-world experiments demonstrate improved robustness under visual distractors and severe spatial perturbations while preserving the low-step inference efficiency of A2A. Controlled initialization and perception ablations further identify object-centric grounding as a major source of the gains and show that it complements, rather than replaces, useful historical motion priors.</p>
+      </div>
+
+      <div class="highlights">
+        <div class="highlight">
+          <h3>Object-Centric Conditioning</h3>
+          <p>Separates task-relevant semantic object features from image-plane spatial cues.</p>
+        </div>
+        <div class="highlight">
+          <h3>Current-State Grounding</h3>
+          <p>Uses lightweight spatial anchors to adapt to shifted object configurations.</p>
+        </div>
+        <div class="highlight">
+          <h3>Efficient Generation</h3>
+          <p>Preserves the six-step inference budget of history-conditioned A2A flow matching.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -118,6 +141,35 @@
         <img class="qualitative-image" src="assets/qualitative_real.png" alt="Real-world qualitative results">
         <p class="caption has-text-centered">Real-world UR3 deployment under tablecloth replacement and object-position perturbations.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Open-Source Release</h2>
+      <div class="content has-text-justified">
+        <p>The official implementation is available on <a href="https://github.com/Li-Jijie/Object-Centric-Visuomotor-Flow">GitHub</a>. It includes SlotFlow-specific code, configuration files, and reproduction instructions built on the A2A flow-matching framework. Checkpoints and datasets are not included in this release.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Demo Video</h2>
+      <iframe class="demo-video" src="https://drive.google.com/file/d/1kXX0o2Keklti7jP2Eu0fUyyFh0sOjEi6/preview" title="SlotFlow demonstration video" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <p class="caption has-text-centered"><a href="https://drive.google.com/file/d/1kXX0o2Keklti7jP2Eu0fUyyFh0sOjEi6/view?usp=share_link">Watch the demo on Google Drive</a></p>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">BibTeX</h2>
+      <pre class="bibtex">@inproceedings{li2026objectcentric,
+  title     = {Object-Centric Conditioning for Visuomotor Flow Matching},
+  author    = {Li, Jijie and Yang, Xu and Zou, Junhong and Zhao, Chunhai and Zhao, Chaoyang and Lei, Zhen and Zhu, Xiangyu},
+  booktitle = {Conference on Robot Learning},
+  year      = {2026}
+}</pre>
     </div>
   </section>
 

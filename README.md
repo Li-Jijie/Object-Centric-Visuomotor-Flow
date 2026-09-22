@@ -50,6 +50,8 @@ For the shared simulator environment, Docker configuration, and baseline setup, 
 
 [A2A Flow Matching](https://github.com/JIAjindou/A2A_Flow_Matching)
 
+> **Acknowledgment.** Our implementation is built upon and substantially adapts the [A2A Flow Matching](https://github.com/JIAjindou/A2A_Flow_Matching) codebase. We retain its RoboVerse-based training infrastructure and extend the policy with SlotFlow's frozen-DINO object-centric conditioning and slot-distillation components.
+
 ## External Models
 
 Keep external model files outside this repository:

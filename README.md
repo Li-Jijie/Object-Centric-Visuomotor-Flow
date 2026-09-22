@@ -148,7 +148,7 @@ This repository contains the SlotFlow training implementation, data-conversion u
 
 ## Reproducing the Paper
 
-The release will include configuration files and scripts for Close Box, Pick Cube, and Push Cube evaluation; visual, kinematic, and spatial perturbation protocols; core component ablations; reviewer-motivated controls; mid-rollout object displacement experiments; and real-world UR3 evaluation, subject to hardware and dataset availability.
+The experiments reported in the paper were conducted in an internal Docker-based environment on Linux GPU servers. This public release provides the SlotFlow training implementation, task-specific configuration files, and data-processing utilities used in our workflow. The original environment also contains internal infrastructure and data assets that cannot be redistributed. Consequently, we have not yet performed a complete end-to-end reproduction from this public release in a fresh environment. Users may need to adapt simulator installation, external model locations, and dataset paths to their local Linux setup.
 
 ## Citation
 

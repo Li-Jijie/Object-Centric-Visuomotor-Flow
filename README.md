@@ -155,11 +155,11 @@ The experiments reported in the paper were conducted in an internal Docker-based
 If you find this work useful, please cite:
 
 ```bibtex
-@inproceedings{li2026objectcentric,
-  title     = {Object-Centric Conditioning for Visuomotor Flow Matching},
-  author    = {Li, Jijie and Yang, Xu and Zou, Junhong and Zhao, Chunhai and Zhao, Chaoyang and Lei, Zhen and Zhu, Xiangyu},
-  booktitle = {Proceedings of the Conference on Robot Learning},
-  year      = {2026}
+@article{li2026object,
+  title   = {Object-Centric Conditioning for Visuomotor Flow Matching},
+  author  = {Li, Jijie and Yang, Xu and Zou, Junhong and Zhao, Chunhai and Zhao, Chaoyang and Lei, Zhen and Zhu, Xiangyu},
+  journal = {arXiv preprint arXiv:2609.24155},
+  year    = {2026}
 }
 ```
 
